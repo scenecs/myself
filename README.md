@@ -7,6 +7,8 @@ Browser Support: IE 9+, Safari, Chrome, Opera
 
 This is small work sample with emberJS. This project based on [ember-app-kit](https://github.com/stefanpenner/ember-app-kit).
 
+This page follows responsive web design techniques and reacts on different screen sizes.
+
 
 #### Next follows a short list of some interesting files:
 
