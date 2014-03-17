@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/*
+ * @package scenecs
+ * @category css
+ * @autor SCENECS <scenecs@t-online.de
+ * @copyright Copyright (c) 2014, SCENECS
+ */
+
+@import "mixins.less";
+@import "variables.less";
+
+html {
+    height: 100.01%;
+    @media (min-width: @screen-sm-min) {
+        min-height: 600px;
+    }
+    
+    body {
+        height: 100.01%;
+        background-color: transparent;
+        background-image: url(images/pattern-white-sough.png);
+        background-repeat: repeat;
+        
+        @media (max-width: @screen-xs-max) {
+            background-image: url(images/pattern-strips.png);
+        }
+        
+        & > .ember-view {
+            height: 100.01%;
+        }
+        .full-height {
+
+            @media (min-width: @screen-sm-min) {
+                height: 100.01%;
+            }
+        }
+
+        .colRight {
+            border-left-color: @gray-light;
+            border-left-style: groove;
+            border-left-width: @border-default-width;
+            
+            @media (max-width: @screen-xs-max) {
+                border: none;
+            }
+        }
+        
+        .colLeft {
+            @media (max-width: @screen-xs-max) {
+                background-image: url(images/pattern-white-sough.png);
+                background-repeat: repeat;
+            }
+        }
+
+        .inverse-layout .colLeft,
+        .colRight {
+            background-image: url(images/pattern-strips.png);
+            background-repeat: repeat;
+            
+            @media (max-width: @screen-xs-max) {
+                background: none;
+            }
+        }
+        
+        .inverse-layout .colRight {
+            background: none;
+            border-left-style: ridge;
+            
+            @media (max-width: @screen-xs-max) {
+                border: none;
+            }
+        }
+    }
+}

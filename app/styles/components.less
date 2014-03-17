@@ -1,0 +1,266 @@
+@charset "UTF-8";
+/*
+ * @package scenecs
+ * @category css
+ * @autor SCENECS <scenecs@t-online.de
+ * @copyright Copyright (c) 2014, SCENECS
+ */
+ 
+@import "mixins.less";
+@import "variables.less";
+
+.arrow {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url(images/arrows.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    
+    &.arrow-left-top {
+        
+    }
+}
+
+
+//= Component: my-image-button
+//-----------------------------
+
+.my-image-button {
+    display: inline-block;
+    border-radius: 206px;
+    border-style: solid;
+    background-color: transparent;
+    border-width: 4px;
+    width: 206px;
+    height: 206px;
+    padding: 12px;
+
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        top: 50px;
+    }
+
+    .my-image {
+        width: 175px;
+        height: 175px;
+        border-radius: 175px;
+    }
+}
+
+.my-image-button-wrapper {
+    position: relative;
+
+    .my-image-button {
+        .my-image-button;
+
+        display: block;
+        margin: 0 auto;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        margin-left: -103px;
+        
+        @media (max-width: @screen-xs-max) {
+            position: static;
+            top: auto;
+            left: auto;
+            margin: 2em auto;
+        }
+    }
+    
+    .my-image-button-active {
+        position: absolute;
+        width: 100%;
+        top:0;
+        display: none;
+
+        /* don't show on very small devices */
+        @media (max-width: @screen-xs-max) {
+            .responsive-invisibility();
+        }
+
+        .my-image-button {
+    
+            .my-image-button;
+            
+            height: 400px;
+            width: 400px;
+            border-radius: 400px;
+            padding: 21px;
+            margin: 0 auto;
+            top: 0;
+            margin-left: -200px;
+            
+            @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+                height: 300px;
+                width: 300px;
+                padding: 16px;
+                margin-left: -150px;
+                top: 0;
+            }
+            
+            .my-image {
+                background-image: url(images/_MG_1451_BEB.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                width: 350px;
+                height: 350px;
+                border-radius: 350px;
+                
+                @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+                    width: 260px;
+                    height: 260px;
+                    border-radius: 260px;
+                }
+            }
+        }
+    
+        .navigation-cycle {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            position: relative;
+            width: 600px;
+            
+            @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+                width: 470px;
+            }
+    
+            .navigation-cycle-item {
+                font-size: 1.5em;
+                position: absolute;
+    
+                .arrow {
+                    .arrow;
+                    
+                    position: absolute;
+                }
+                
+                .glyphicon {
+                    font-size: 2em;
+                }
+                
+                &:hover {
+                    .arrow {
+                        display: block;
+                    }
+                }
+    
+                &.navigation-cycle-item-position-west {
+                    text-align: right;
+                    padding-right: 40px;
+                    left: 0;
+                    top: 180px;
+                    
+                    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+                        top: 120px;
+                    }
+    
+                    .arrow {
+                        background-position: -40px 0px;
+                        right: 0px;
+                        top: 50%;
+                        margin-top: -20px;
+                    }
+                }
+    
+                &.navigation-cycle-item-position-east {
+                    padding-left: 40px;
+                    right: 0;
+                    top: 180px;
+                    
+                    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+                        top: 120px;
+                    }
+                    
+                    .arrow {
+                        background-position: -80px 0px;
+                        left: 0px;
+                        top: 50%;
+                        margin-top: -20px;
+                    }
+                }
+    
+                &.navigation-cycle-item-position-south {
+                    text-align: center;
+                    top: 420px;
+                    left: 50%;
+                    margin-left: -20px;
+    
+                    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+                        top: 310px;
+                    }
+                    
+                    .arrow {
+                        background-position: -160px 0px;
+                        left: 50%;
+                        margin-left: -20px;
+                        padding-bottom: .5em;
+                        
+                        & + span {
+                            margin-top: 40px;
+                        }
+                    }
+                }
+            }
+        }
+        @media (min-width: @screen-sm-min) {
+            &.fadein {
+                display: block;
+                .mixinFrames(){
+                    from {
+                         .opacity(0);
+                    }
+                    to {
+                         .opacity(1);
+                    }
+                }
+        
+                @-webkit-keyframes opacity-ani {.mixinFrames;}
+                @-moz-keyframes opacity-ani {.mixinFrames;}
+                @-ms-keyframes opacity-ani {.mixinFrames;}
+                @-o-keyframes opacity-ani {.mixinFrames;}
+                @keyframes opacity-ani {.mixinFrames;}
+        
+                .my-image-button {
+                    .animation-name(opacity-ani);
+                    .animation-duration(1s);
+                    .animation-direction(normal);
+                    .animation-fill-mode(both);
+                    
+                }
+                
+                .navigation-cycle {
+                    .animation-name(opacity-ani);
+                    .animation-delay(.5s);
+                    .animation-duration(.5s);
+                    .animation-fill-mode(both);
+                }
+            }
+            &.fadeout {
+                display: block;
+                .mixinFadeOut(){
+                    from {
+                        .opacity(1);
+                        display: block;
+                    }
+                    to { 
+                        .opacity(0);
+                        display: none;
+                    }
+                }
+                .animation-name(fadeout-ani);
+                .animation-duration(1s);
+                .animation-direction(normal);
+                .animation-fill-mode(both);
+        
+                @-webkit-keyframes fadeout-ani {.mixinFadeOut;}
+                @-moz-keyframes fadeout-ani {.mixinFadeOut;}
+                @-ms-keyframes fadeout-ani {.mixinFadeOut;}
+                @-o-keyframes fadeout-ani {.mixinFadeOut;}
+                @keyframes fadeout-ani {.mixinFadeOut;}
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#scenecs-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        {{#link-to "index" class="navbar-brand" data-toggle="collapse" data-target="#scenecs-navbar-collapse-1" }}HOME{{/link-to}}
+    </div>
+    <div class="collapse navbar-collapse" id="scenecs-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li data-toggle="collapse" data-target="#scenecs-navbar-collapse-1">{{#link-to "myself"}}myself{{/link-to}}</li>
+            <li data-toggle="collapse" data-target="#scenecs-navbar-collapse-1">{{#link-to "competences"}}competences{{/link-to}}</li>
+            <li data-toggle="collapse" data-target="#scenecs-navbar-collapse-1">{{#link-to "projects"}}projects{{/link-to}}</li>
+        </ul>
+    </div>
+</nav>

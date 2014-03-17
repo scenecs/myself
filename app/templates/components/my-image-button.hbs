@@ -1,0 +1,16 @@
+
+<div class="my-image-button-wrapper">
+    <div class="my-image-button">
+        <img class="my-image" src="assets/images/_MG_1451_BEBSW.png" alt="Markus Brandt" />
+    </div>
+    <div class="my-image-button-active" {{bind-attr class="showNavigationCycle:fadein:fadeout"}}>
+        <div class="my-image-button">
+            <div class="my-image"></div>
+        </div>
+        <ul class="navigation-cycle">
+            <li class="navigation-cycle-item navigation-cycle-item-position-west" data-toggle="tooltip" data-placement="top" title="myself">{{#link-to "myself"}}<span class="arrow"></span><span class="glyphicon glyphicon-user"></span>{{/link-to}}</li>
+            <li class="navigation-cycle-item navigation-cycle-item-position-east" data-toggle="tooltip" data-placement="top" title="competencies">{{#link-to "competences"}}<span class="arrow"></span><span class="glyphicon glyphicon-record"></span>{{/link-to}}</li>
+            <li class="navigation-cycle-item navigation-cycle-item-position-south" data-toggle="tooltip" data-placement="top" title="projects">{{#link-to "projects"}}<span class="arrow"></span><span class="glyphicon glyphicon-list"></span>{{/link-to}}</li>
+        </ul>
+    </div>
+</div>
