@@ -1,3 +1,3 @@
 export default DS.Model.extend({
-    firstName: attr('string')
+    firstName: DS.attr('string')
 });

@@ -4,14 +4,14 @@ export default Ember.Component.extend({
     eventHandler: null,
     
     mouseEnter: function() {
-        clearTimeout(this.get("eventHandler"));
+        window.clearTimeout(this.get("eventHandler"));
         this.set("showNavigationCycle", true);
     },
     
     mouseLeave: function() {
         var self = this;
 
-        this.set("eventHandler", setTimeout(function(){
+        this.set("eventHandler", window.setTimeout(function(){
             self.set("showNavigationCycle", false);
         }, 300));
     },
